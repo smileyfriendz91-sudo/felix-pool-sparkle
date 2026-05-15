@@ -1,26 +1,239 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Phone, Droplets, Wrench, Hammer, CheckCircle2, Sparkles, ShieldCheck } from "lucide-react";
+import poolAfter from "@/assets/pool-after.jpg";
+import poolBefore from "@/assets/pool-before.jpg";
+import filterCleaning from "@/assets/filter-cleaning.jpg";
+import poolSweeping from "@/assets/pool-sweeping.jpg";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Felix Pool Service — Pool Cleaning, Repairs & Installation" },
+      {
+        name: "description",
+        content:
+          "Felix Pool Service offers professional pool cleaning, repair, and installation. Crystal-clear water, guaranteed. Call 424-385-6978.",
+      },
+      { property: "og:title", content: "Felix Pool Service" },
+      { property: "og:description", content: "Pool service, repair & installation." },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+const PHONE = "424-385-6978";
+const PHONE_HREF = "tel:+14243856978";
+
+function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background text-foreground">
+      <Header />
+      <Hero />
+      <Services />
+      <BeforeAfter />
+      <Why />
+      <CTA />
+      <Footer />
     </div>
   );
 }
 
-function Index() {
-  return <PlaceholderIndex />;
+function Header() {
+  return (
+    <header className="absolute top-0 left-0 right-0 z-20">
+      <div className="mx-auto max-w-6xl px-6 py-5 flex items-center justify-between">
+        <a href="#top" className="flex items-center gap-2 text-white">
+          <Droplets className="w-6 h-6" />
+          <span className="font-semibold tracking-tight">Felix Pool Service</span>
+        </a>
+        <a
+          href={PHONE_HREF}
+          className="hidden sm:inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur px-4 py-2 text-sm text-white border border-white/20 hover:bg-white/25 transition"
+        >
+          <Phone className="w-4 h-4" /> {PHONE}
+        </a>
+      </div>
+    </header>
+  );
+}
+
+function Hero() {
+  return (
+    <section
+      id="top"
+      className="relative overflow-hidden text-white"
+      style={{ background: "var(--gradient-hero)" }}
+    >
+      <div
+        className="absolute inset-0 opacity-40 bg-cover bg-center"
+        style={{ backgroundImage: `url(${poolAfter})` }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-brand-deep/70 via-brand-deep/40 to-background" />
+      <div className="relative mx-auto max-w-6xl px-6 pt-36 pb-28 md:pt-44 md:pb-36">
+        <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs uppercase tracking-wider">
+          <Sparkles className="w-3.5 h-3.5" /> Trusted local pool experts
+        </span>
+        <h1 className="mt-5 text-5xl md:text-7xl font-bold tracking-tight max-w-3xl">
+          Crystal-clear pools, every week.
+        </h1>
+        <p className="mt-5 text-lg md:text-xl text-white/85 max-w-2xl">
+          Felix Pool Service keeps your water sparkling and your equipment running.
+          Cleaning, repairs, and new pool installations done right.
+        </p>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <a
+            href={PHONE_HREF}
+            className="inline-flex items-center gap-2 rounded-full bg-white text-brand-deep px-6 py-3 font-semibold shadow-[var(--shadow-soft)] hover:scale-[1.02] transition"
+          >
+            <Phone className="w-4 h-4" /> Call {PHONE}
+          </a>
+          <a
+            href="#services"
+            className="inline-flex items-center rounded-full border border-white/30 px-6 py-3 font-medium hover:bg-white/10 transition"
+          >
+            Our services
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Services() {
+  const items = [
+    {
+      icon: Droplets,
+      title: "Weekly Pool Service",
+      desc: "Skimming, brushing, vacuuming, water testing, and chemical balancing to keep your pool pristine.",
+      img: poolSweeping,
+    },
+    {
+      icon: Wrench,
+      title: "Repairs & Equipment",
+      desc: "Pumps, filters, heaters, and plumbing — diagnosed and repaired by experienced technicians.",
+      img: filterCleaning,
+    },
+    {
+      icon: Hammer,
+      title: "New Pool Installations",
+      desc: "From planning to first swim. Quality builds tailored to your backyard and budget.",
+      img: poolAfter,
+    },
+  ];
+  return (
+    <section id="services" className="py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="max-w-2xl">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">What we do</h2>
+          <p className="mt-3 text-muted-foreground text-lg">
+            Full-service pool care — from routine maintenance to complete builds.
+          </p>
+        </div>
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {items.map((s) => (
+            <article
+              key={s.title}
+              className="group rounded-2xl bg-card overflow-hidden border border-border shadow-sm hover:shadow-[var(--shadow-soft)] transition"
+            >
+              <div
+                className="h-52 bg-cover bg-center transition-transform group-hover:scale-105"
+                style={{ backgroundImage: `url(${s.img})` }}
+              />
+              <div className="p-6">
+                <s.icon className="w-7 h-7 text-brand" />
+                <h3 className="mt-3 text-xl font-semibold">{s.title}</h3>
+                <p className="mt-2 text-muted-foreground">{s.desc}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function BeforeAfter() {
+  return (
+    <section className="py-24 bg-secondary">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="max-w-2xl">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Real results</h2>
+          <p className="mt-3 text-muted-foreground text-lg">
+            From green and neglected to sparkling blue — see the Felix difference.
+          </p>
+        </div>
+        <div className="mt-12 grid md:grid-cols-2 gap-6">
+          <figure className="rounded-2xl overflow-hidden shadow-[var(--shadow-soft)]">
+            <img src={poolBefore} alt="Algae-filled green pool before service" className="w-full h-[420px] object-cover" />
+            <figcaption className="bg-card px-5 py-3 font-medium">Before</figcaption>
+          </figure>
+          <figure className="rounded-2xl overflow-hidden shadow-[var(--shadow-soft)]">
+            <img src={poolAfter} alt="Crystal clear blue pool after Felix Pool Service" className="w-full h-[420px] object-cover" />
+            <figcaption className="bg-card px-5 py-3 font-medium">After</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Why() {
+  const points = [
+    { icon: ShieldCheck, title: "Licensed & insured", desc: "Reliable service you can trust." },
+    { icon: CheckCircle2, title: "On-time, every time", desc: "Consistent weekly visits." },
+    { icon: Sparkles, title: "Guaranteed clean", desc: "We're not done until it shines." },
+  ];
+  return (
+    <section className="py-24">
+      <div className="mx-auto max-w-6xl px-6 grid md:grid-cols-3 gap-8">
+        {points.map((p) => (
+          <div key={p.title} className="flex gap-4">
+            <p.icon className="w-8 h-8 text-brand shrink-0" />
+            <div>
+              <h3 className="font-semibold text-lg">{p.title}</h3>
+              <p className="text-muted-foreground mt-1">{p.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function CTA() {
+  return (
+    <section className="py-20">
+      <div
+        className="mx-auto max-w-6xl mx-6 rounded-3xl px-8 py-14 md:px-14 md:py-20 text-white text-center"
+        style={{ background: "var(--gradient-pool)" }}
+      >
+        <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
+          Ready for a cleaner pool?
+        </h2>
+        <p className="mt-3 text-white/90 max-w-xl mx-auto">
+          Call Felix today for a free quote on service, repair, or installation.
+        </p>
+        <a
+          href={PHONE_HREF}
+          className="mt-7 inline-flex items-center gap-2 rounded-full bg-white text-brand-deep px-7 py-3.5 font-semibold shadow-lg hover:scale-[1.02] transition"
+        >
+          <Phone className="w-4 h-4" /> {PHONE}
+        </a>
+      </div>
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="border-t border-border py-10">
+      <div className="mx-auto max-w-6xl px-6 flex flex-col sm:flex-row gap-4 items-center justify-between text-sm text-muted-foreground">
+        <div className="flex items-center gap-2">
+          <Droplets className="w-4 h-4 text-brand" />
+          <span>© {new Date().getFullYear()} Felix Pool Service</span>
+        </div>
+        <a href={PHONE_HREF} className="hover:text-foreground transition">{PHONE}</a>
+      </div>
+    </footer>
+  );
 }
