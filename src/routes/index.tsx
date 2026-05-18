@@ -48,12 +48,20 @@ function Header() {
           <Droplets className="w-6 h-6" />
           <span className="font-semibold tracking-tight">Felix Pool Service</span>
         </a>
-        <a
-          href={PHONE_HREF}
-          className="hidden sm:inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur px-4 py-2 text-sm text-white border border-white/20 hover:bg-white/25 transition"
-        >
-          <Phone className="w-4 h-4" /> {PHONE}
-        </a>
+        <div className="hidden sm:flex items-center gap-2">
+          <a
+            href={EMAIL_HREF}
+            className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur px-4 py-2 text-sm text-white border border-white/20 hover:bg-white/25 transition"
+          >
+            <Mail className="w-4 h-4" /> {EMAIL}
+          </a>
+          <a
+            href={PHONE_HREF}
+            className="inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur px-4 py-2 text-sm text-white border border-white/20 hover:bg-white/25 transition"
+          >
+            <Phone className="w-4 h-4" /> {PHONE}
+          </a>
+        </div>
       </div>
     </header>
   );
