@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Phone, Droplets, Wrench, Hammer, CheckCircle2, Sparkles, ShieldCheck } from "lucide-react";
+import { Phone, Mail, Droplets, Wrench, Hammer, CheckCircle2, Sparkles, ShieldCheck } from "lucide-react";
 import poolAfter from "@/assets/pool-after.jpg";
 import poolBefore from "@/assets/pool-before.jpg";
 import filterCleaning from "@/assets/filter-cleaning.jpg";
@@ -23,6 +23,8 @@ export const Route = createFileRoute("/")({
 
 const PHONE = "424-385-6978";
 const PHONE_HREF = "tel:+14243856978";
+const EMAIL = "felixpoolservice67@gmail.com";
+const EMAIL_HREF = "mailto:felixpoolservice67@gmail.com";
 
 function Index() {
   return (
@@ -46,12 +48,20 @@ function Header() {
           <Droplets className="w-6 h-6" />
           <span className="font-semibold tracking-tight">Felix Pool Service</span>
         </a>
-        <a
-          href={PHONE_HREF}
-          className="hidden sm:inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur px-4 py-2 text-sm text-white border border-white/20 hover:bg-white/25 transition"
-        >
-          <Phone className="w-4 h-4" /> {PHONE}
-        </a>
+        <div className="hidden sm:flex items-center gap-2">
+          <a
+            href={EMAIL_HREF}
+            className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur px-4 py-2 text-sm text-white border border-white/20 hover:bg-white/25 transition"
+          >
+            <Mail className="w-4 h-4" /> {EMAIL}
+          </a>
+          <a
+            href={PHONE_HREF}
+            className="inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur px-4 py-2 text-sm text-white border border-white/20 hover:bg-white/25 transition"
+          >
+            <Phone className="w-4 h-4" /> {PHONE}
+          </a>
+        </div>
       </div>
     </header>
   );
@@ -213,12 +223,20 @@ function CTA() {
         <p className="mt-3 text-white/90 max-w-xl mx-auto">
           Call Felix today for a free quote on service, repair, or installation.
         </p>
-        <a
-          href={PHONE_HREF}
-          className="mt-7 inline-flex items-center gap-2 rounded-full bg-white text-brand-deep px-7 py-3.5 font-semibold shadow-lg hover:scale-[1.02] transition"
-        >
-          <Phone className="w-4 h-4" /> {PHONE}
-        </a>
+        <div className="mt-7 flex flex-wrap gap-3 justify-center">
+          <a
+            href={PHONE_HREF}
+            className="inline-flex items-center gap-2 rounded-full bg-white text-brand-deep px-7 py-3.5 font-semibold shadow-lg hover:scale-[1.02] transition"
+          >
+            <Phone className="w-4 h-4" /> {PHONE}
+          </a>
+          <a
+            href={EMAIL_HREF}
+            className="inline-flex items-center gap-2 rounded-full border border-white/40 text-white px-7 py-3.5 font-semibold hover:bg-white/10 transition"
+          >
+            <Mail className="w-4 h-4" /> Email us
+          </a>
+        </div>
       </div>
     </section>
   );
@@ -232,7 +250,10 @@ function Footer() {
           <Droplets className="w-4 h-4 text-brand" />
           <span>© {new Date().getFullYear()} Felix Pool Service</span>
         </div>
-        <a href={PHONE_HREF} className="hover:text-foreground transition">{PHONE}</a>
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-5 items-center">
+          <a href={PHONE_HREF} className="hover:text-foreground transition">{PHONE}</a>
+          <a href={EMAIL_HREF} className="hover:text-foreground transition">{EMAIL}</a>
+        </div>
       </div>
     </footer>
   );
