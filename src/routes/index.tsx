@@ -1,9 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Phone, Mail, Droplets, Wrench, Hammer, CheckCircle2, Sparkles, ShieldCheck } from "lucide-react";
-import poolAfter from "@/assets/pool-after.jpg";
-import poolBefore from "@/assets/pool-before.jpg";
-import filterCleaning from "@/assets/filter-cleaning.jpg";
-import poolSweeping from "@/assets/pool-sweeping.jpg";
+import poolServiced from "@/assets/pool-serviced.webp";
+import acidWash from "@/assets/acid-wash.webp";
+import equipmentInstall from "@/assets/equipment-installation.webp";
+import filterSystem from "@/assets/filter-system.webp";
+import hotTub from "@/assets/hot-tub.webp";
+import newPoolStartup from "@/assets/new-pool-startup.webp";
+import poolRemodeling from "@/assets/pool-remodeling.webp";
+import waterBalancing from "@/assets/water-balancing.webp";
+import pumpSystems from "@/assets/pump-systems.jpg";
+import felixAtWork from "@/assets/felix-at-work.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -76,7 +82,7 @@ function Hero() {
     >
       <div
         className="absolute inset-0 opacity-40 bg-cover bg-center"
-        style={{ backgroundImage: `url(${poolAfter})` }}
+        style={{ backgroundImage: `url(${poolServiced})` }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-brand-deep/70 via-brand-deep/40 to-background" />
       <div className="relative mx-auto max-w-6xl px-6 pt-36 pb-28 md:pt-44 md:pb-36">
@@ -114,20 +120,56 @@ function Services() {
     {
       icon: Droplets,
       title: "Weekly Pool Service",
-      desc: "Skimming, brushing, vacuuming, water testing, and chemical balancing to keep your pool pristine.",
-      img: poolSweeping,
+      desc: "Skimming, brushing, vacuuming, and brushing to keep your pool pristine all season long.",
+      img: poolServiced,
+    },
+    {
+      icon: Sparkles,
+      title: "Water Balancing",
+      desc: "Professional water testing and chemical balancing for safe, clear, comfortable swimming.",
+      img: waterBalancing,
     },
     {
       icon: Wrench,
-      title: "Repairs & Equipment",
-      desc: "Pumps, filters, heaters, and plumbing — diagnosed and repaired by experienced technicians.",
-      img: filterCleaning,
+      title: "Filter Cleaning",
+      desc: "Cartridge, DE, and sand filter cleaning to keep your system running at peak performance.",
+      img: filterSystem,
     },
     {
       icon: Hammer,
-      title: "New Pool Installations",
-      desc: "From planning to first swim. Quality builds tailored to your backyard and budget.",
-      img: poolAfter,
+      title: "Equipment Installation",
+      desc: "Pumps, heaters, salt systems, and automation — installed correctly the first time.",
+      img: equipmentInstall,
+    },
+    {
+      icon: Wrench,
+      title: "Pump & System Repairs",
+      desc: "Familiar with every major pump and plumbing setup. Fast diagnosis, lasting repairs.",
+      img: pumpSystems,
+    },
+    {
+      icon: Droplets,
+      title: "Hot Tub Service",
+      desc: "Spa cleaning, water care, and equipment service to keep your hot tub ready to enjoy.",
+      img: hotTub,
+    },
+    {
+      icon: Hammer,
+      title: "Pool Remodeling",
+      desc: "Replaster, retile, and full resurfacing to bring tired pools back to life.",
+      img: poolRemodeling,
+    },
+    {
+      icon: Sparkles,
+      title: "Acid Wash",
+      desc: "Deep stain removal and surface restoration for neglected or discolored pools.",
+      img: acidWash,
+    },
+    {
+      icon: Droplets,
+      title: "New Pool Start-up",
+      desc: "Complete chemical start-up and break-in service for brand new pools.",
+      img: newPoolStartup,
     },
   ];
   return (
@@ -163,24 +205,37 @@ function Services() {
 }
 
 function BeforeAfter() {
+  const shots = [
+    { src: poolServiced, alt: "Crystal clear backyard pool serviced by Felix" },
+    { src: felixAtWork, alt: "Felix replacing pool filter cartridges" },
+    { src: poolRemodeling, alt: "Pool remodeling and resurfacing in progress" },
+    { src: pumpSystems, alt: "Multi-pump pool system serviced by Felix" },
+    { src: acidWash, alt: "Pool acid wash restoring the surface" },
+    { src: newPoolStartup, alt: "New pool chemical start-up service" },
+  ];
   return (
     <section className="py-24 bg-secondary">
       <div className="mx-auto max-w-6xl px-6">
         <div className="max-w-2xl">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Real results</h2>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Our work</h2>
           <p className="mt-3 text-muted-foreground text-lg">
-            From green and neglected to sparkling blue — see the Felix difference.
+            Real pools, real equipment, real results — straight from the job.
           </p>
         </div>
-        <div className="mt-12 grid md:grid-cols-2 gap-6">
-          <figure className="rounded-2xl overflow-hidden shadow-[var(--shadow-soft)]">
-            <img src={poolBefore} alt="Algae-filled green pool before service" className="w-full h-[420px] object-cover" />
-            <figcaption className="bg-card px-5 py-3 font-medium">Before</figcaption>
-          </figure>
-          <figure className="rounded-2xl overflow-hidden shadow-[var(--shadow-soft)]">
-            <img src={poolAfter} alt="Crystal clear blue pool after Felix Pool Service" className="w-full h-[420px] object-cover" />
-            <figcaption className="bg-card px-5 py-3 font-medium">After</figcaption>
-          </figure>
+        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {shots.map((s) => (
+            <figure
+              key={s.alt}
+              className="rounded-2xl overflow-hidden shadow-[var(--shadow-soft)] bg-card"
+            >
+              <img
+                src={s.src}
+                alt={s.alt}
+                loading="lazy"
+                className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </figure>
+          ))}
         </div>
       </div>
     </section>
