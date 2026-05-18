@@ -223,12 +223,20 @@ function CTA() {
         <p className="mt-3 text-white/90 max-w-xl mx-auto">
           Call Felix today for a free quote on service, repair, or installation.
         </p>
-        <a
-          href={PHONE_HREF}
-          className="mt-7 inline-flex items-center gap-2 rounded-full bg-white text-brand-deep px-7 py-3.5 font-semibold shadow-lg hover:scale-[1.02] transition"
-        >
-          <Phone className="w-4 h-4" /> {PHONE}
-        </a>
+        <div className="mt-7 flex flex-wrap gap-3 justify-center">
+          <a
+            href={PHONE_HREF}
+            className="inline-flex items-center gap-2 rounded-full bg-white text-brand-deep px-7 py-3.5 font-semibold shadow-lg hover:scale-[1.02] transition"
+          >
+            <Phone className="w-4 h-4" /> {PHONE}
+          </a>
+          <a
+            href={EMAIL_HREF}
+            className="inline-flex items-center gap-2 rounded-full border border-white/40 text-white px-7 py-3.5 font-semibold hover:bg-white/10 transition"
+          >
+            <Mail className="w-4 h-4" /> Email us
+          </a>
+        </div>
       </div>
     </section>
   );
