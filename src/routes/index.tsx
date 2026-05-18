@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Phone, Droplets, Wrench, Hammer, CheckCircle2, Sparkles, ShieldCheck } from "lucide-react";
+import { Phone, Mail, Droplets, Wrench, Hammer, CheckCircle2, Sparkles, ShieldCheck } from "lucide-react";
 import poolAfter from "@/assets/pool-after.jpg";
 import poolBefore from "@/assets/pool-before.jpg";
 import filterCleaning from "@/assets/filter-cleaning.jpg";
