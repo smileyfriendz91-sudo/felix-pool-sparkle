@@ -1,9 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Phone, Mail, Droplets, Wrench, Hammer, CheckCircle2, Sparkles, ShieldCheck } from "lucide-react";
-import poolAfter from "@/assets/pool-after.jpg";
-import poolBefore from "@/assets/pool-before.jpg";
-import filterCleaning from "@/assets/filter-cleaning.jpg";
-import poolSweeping from "@/assets/pool-sweeping.jpg";
+import poolServiced from "@/assets/pool-serviced.webp";
+import acidWash from "@/assets/acid-wash.webp";
+import equipmentInstall from "@/assets/equipment-installation.webp";
+import filterSystem from "@/assets/filter-system.webp";
+import hotTub from "@/assets/hot-tub.webp";
+import newPoolStartup from "@/assets/new-pool-startup.webp";
+import poolRemodeling from "@/assets/pool-remodeling.webp";
+import waterBalancing from "@/assets/water-balancing.webp";
+import pumpSystems from "@/assets/pump-systems.jpg";
+import felixAtWork from "@/assets/felix-at-work.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
