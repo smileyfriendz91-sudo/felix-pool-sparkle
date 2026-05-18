@@ -38,7 +38,7 @@ function Index() {
       <Header />
       <Hero />
       <Services />
-      <BeforeAfter />
+      
       <Why />
       <CTA />
       <Footer />
