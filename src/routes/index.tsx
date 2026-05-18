@@ -250,7 +250,10 @@ function Footer() {
           <Droplets className="w-4 h-4 text-brand" />
           <span>© {new Date().getFullYear()} Felix Pool Service</span>
         </div>
-        <a href={PHONE_HREF} className="hover:text-foreground transition">{PHONE}</a>
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-5 items-center">
+          <a href={PHONE_HREF} className="hover:text-foreground transition">{PHONE}</a>
+          <a href={EMAIL_HREF} className="hover:text-foreground transition">{EMAIL}</a>
+        </div>
       </div>
     </footer>
   );
