@@ -38,7 +38,7 @@ function Index() {
       <Header />
       <Hero />
       <Services />
-      <BeforeAfter />
+      
       <Why />
       <CTA />
       <Footer />
@@ -197,44 +197,6 @@ function Services() {
                 <p className="mt-2 text-muted-foreground">{s.desc}</p>
               </div>
             </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function BeforeAfter() {
-  const shots = [
-    { src: poolServiced, alt: "Crystal clear backyard pool serviced by Felix" },
-    { src: felixAtWork, alt: "Felix replacing pool filter cartridges" },
-    { src: poolRemodeling, alt: "Pool remodeling and resurfacing in progress" },
-    { src: pumpSystems, alt: "Multi-pump pool system serviced by Felix" },
-    { src: acidWash, alt: "Pool acid wash restoring the surface" },
-    { src: newPoolStartup, alt: "New pool chemical start-up service" },
-  ];
-  return (
-    <section className="py-24 bg-secondary">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="max-w-2xl">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Our work</h2>
-          <p className="mt-3 text-muted-foreground text-lg">
-            Real pools, real equipment, real results — straight from the job.
-          </p>
-        </div>
-        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {shots.map((s) => (
-            <figure
-              key={s.alt}
-              className="rounded-2xl overflow-hidden shadow-[var(--shadow-soft)] bg-card"
-            >
-              <img
-                src={s.src}
-                alt={s.alt}
-                loading="lazy"
-                className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </figure>
           ))}
         </div>
       </div>
