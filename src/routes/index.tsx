@@ -82,7 +82,7 @@ function Hero() {
     >
       <div
         className="absolute inset-0 opacity-40 bg-cover bg-center"
-        style={{ backgroundImage: `url(${poolAfter})` }}
+        style={{ backgroundImage: `url(${poolServiced})` }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-brand-deep/70 via-brand-deep/40 to-background" />
       <div className="relative mx-auto max-w-6xl px-6 pt-36 pb-28 md:pt-44 md:pb-36">
@@ -120,20 +120,56 @@ function Services() {
     {
       icon: Droplets,
       title: "Weekly Pool Service",
-      desc: "Skimming, brushing, vacuuming, water testing, and chemical balancing to keep your pool pristine.",
-      img: poolSweeping,
+      desc: "Skimming, brushing, vacuuming, and brushing to keep your pool pristine all season long.",
+      img: poolServiced,
+    },
+    {
+      icon: Sparkles,
+      title: "Water Balancing",
+      desc: "Professional water testing and chemical balancing for safe, clear, comfortable swimming.",
+      img: waterBalancing,
     },
     {
       icon: Wrench,
-      title: "Repairs & Equipment",
-      desc: "Pumps, filters, heaters, and plumbing — diagnosed and repaired by experienced technicians.",
-      img: filterCleaning,
+      title: "Filter Cleaning",
+      desc: "Cartridge, DE, and sand filter cleaning to keep your system running at peak performance.",
+      img: filterSystem,
     },
     {
       icon: Hammer,
-      title: "New Pool Installations",
-      desc: "From planning to first swim. Quality builds tailored to your backyard and budget.",
-      img: poolAfter,
+      title: "Equipment Installation",
+      desc: "Pumps, heaters, salt systems, and automation — installed correctly the first time.",
+      img: equipmentInstall,
+    },
+    {
+      icon: Wrench,
+      title: "Pump & System Repairs",
+      desc: "Familiar with every major pump and plumbing setup. Fast diagnosis, lasting repairs.",
+      img: pumpSystems,
+    },
+    {
+      icon: Droplets,
+      title: "Hot Tub Service",
+      desc: "Spa cleaning, water care, and equipment service to keep your hot tub ready to enjoy.",
+      img: hotTub,
+    },
+    {
+      icon: Hammer,
+      title: "Pool Remodeling",
+      desc: "Replaster, retile, and full resurfacing to bring tired pools back to life.",
+      img: poolRemodeling,
+    },
+    {
+      icon: Sparkles,
+      title: "Acid Wash",
+      desc: "Deep stain removal and surface restoration for neglected or discolored pools.",
+      img: acidWash,
+    },
+    {
+      icon: Droplets,
+      title: "New Pool Start-up",
+      desc: "Complete chemical start-up and break-in service for brand new pools.",
+      img: newPoolStartup,
     },
   ];
   return (
