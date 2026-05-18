@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Felix Pool Service offers professional pool cleaning, repair, and installation. Crystal-clear water, guaranteed. Call 424-385-6978.",
+          "Felix Pool Service offers professional pool cleaning, repair, and installation. Crystal-clear water, guaranteed. Call 424-385-6852.",
       },
       { property: "og:title", content: "Felix Pool Service" },
       { property: "og:description", content: "Pool service, repair & installation." },
