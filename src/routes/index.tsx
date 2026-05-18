@@ -23,6 +23,8 @@ export const Route = createFileRoute("/")({
 
 const PHONE = "424-385-6978";
 const PHONE_HREF = "tel:+14243856978";
+const EMAIL = "felixpoolservice67@gmail.com";
+const EMAIL_HREF = "mailto:felixpoolservice67@gmail.com";
 
 function Index() {
   return (
