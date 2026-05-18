@@ -205,24 +205,37 @@ function Services() {
 }
 
 function BeforeAfter() {
+  const shots = [
+    { src: poolServiced, alt: "Crystal clear backyard pool serviced by Felix" },
+    { src: felixAtWork, alt: "Felix replacing pool filter cartridges" },
+    { src: poolRemodeling, alt: "Pool remodeling and resurfacing in progress" },
+    { src: pumpSystems, alt: "Multi-pump pool system serviced by Felix" },
+    { src: acidWash, alt: "Pool acid wash restoring the surface" },
+    { src: newPoolStartup, alt: "New pool chemical start-up service" },
+  ];
   return (
     <section className="py-24 bg-secondary">
       <div className="mx-auto max-w-6xl px-6">
         <div className="max-w-2xl">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Real results</h2>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Our work</h2>
           <p className="mt-3 text-muted-foreground text-lg">
-            From green and neglected to sparkling blue — see the Felix difference.
+            Real pools, real equipment, real results — straight from the job.
           </p>
         </div>
-        <div className="mt-12 grid md:grid-cols-2 gap-6">
-          <figure className="rounded-2xl overflow-hidden shadow-[var(--shadow-soft)]">
-            <img src={poolBefore} alt="Algae-filled green pool before service" className="w-full h-[420px] object-cover" />
-            <figcaption className="bg-card px-5 py-3 font-medium">Before</figcaption>
-          </figure>
-          <figure className="rounded-2xl overflow-hidden shadow-[var(--shadow-soft)]">
-            <img src={poolAfter} alt="Crystal clear blue pool after Felix Pool Service" className="w-full h-[420px] object-cover" />
-            <figcaption className="bg-card px-5 py-3 font-medium">After</figcaption>
-          </figure>
+        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {shots.map((s) => (
+            <figure
+              key={s.alt}
+              className="rounded-2xl overflow-hidden shadow-[var(--shadow-soft)] bg-card"
+            >
+              <img
+                src={s.src}
+                alt={s.alt}
+                loading="lazy"
+                className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </figure>
+          ))}
         </div>
       </div>
     </section>
