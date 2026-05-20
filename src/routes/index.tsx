@@ -39,11 +39,53 @@ function Index() {
       <Header />
       <Hero />
       <Services />
-      
+      <Showcase />
       <Why />
       <CTA />
       <Footer />
     </div>
+  );
+}
+
+function Showcase() {
+  return (
+    <section className="relative py-24 overflow-hidden">
+      <div
+        className="absolute inset-0 opacity-95"
+        style={{ background: "var(--gradient-pool)" }}
+      />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.25),transparent_55%)]" />
+      <div className="relative mx-auto max-w-6xl px-6">
+        <div className="max-w-2xl text-white">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs uppercase tracking-wider backdrop-blur">
+            <Sparkles className="w-3.5 h-3.5" /> See us in action
+          </span>
+          <h2 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight">
+            Real work. Real results.
+          </h2>
+          <p className="mt-3 text-white/90 text-lg">
+            A quick look at how Felix Pool Service keeps your water crystal-clear
+            and your equipment running like new.
+          </p>
+        </div>
+        <div className="relative mt-10">
+          <div
+            className="absolute -inset-3 rounded-[2rem] blur-2xl opacity-50"
+            style={{ background: "var(--gradient-pool)" }}
+          />
+          <div className="relative rounded-3xl overflow-hidden border border-white/20 shadow-[var(--shadow-soft)] bg-black">
+            <video
+              className="w-full h-auto block"
+              src="/videos/showcase.mp4"
+              poster="/videos/showcase-poster.jpg"
+              controls
+              playsInline
+              preload="metadata"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 
