@@ -90,7 +90,7 @@ function Hero() {
           <Sparkles className="w-3.5 h-3.5" /> Trusted local pool experts
         </span>
         <h1 className="mt-5 text-5xl md:text-7xl font-bold tracking-tight max-w-3xl">
-          Crystal-clear pools, every week.
+          Felix Pool Service
         </h1>
         <p className="mt-5 text-lg md:text-xl text-white/85 max-w-2xl">
           Felix Pool Service keeps your water sparkling and your equipment running.
