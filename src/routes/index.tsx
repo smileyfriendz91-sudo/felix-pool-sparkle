@@ -249,7 +249,6 @@ function Services() {
 
 function Why() {
   const points = [
-    { icon: ShieldCheck, title: "Licensed & insured", desc: "Reliable service you can trust." },
     { icon: CheckCircle2, title: "On-time, every time", desc: "Consistent weekly visits." },
     { icon: Sparkles, title: "Guaranteed clean", desc: "We're not done until it shines." },
   ];
