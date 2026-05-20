@@ -131,7 +131,7 @@ function Services() {
     },
     {
       icon: Wrench,
-      title: "Filter Cleaning",
+      title: "Equipment Inspection",
       desc: "Cartridge, DE, and sand filter cleaning to keep your system running at peak performance.",
       img: filterSystem,
     },
