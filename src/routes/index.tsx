@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Phone, Mail, Droplets, Wrench, Hammer, CheckCircle2, Sparkles, ShieldCheck } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Phone, Mail, Droplets, Wrench, Hammer, CheckCircle2, Sparkles, ShieldCheck, X } from "lucide-react";
 import poolServiced from "@/assets/pool-serviced.webp";
 import acidWash from "@/assets/acid-wash.webp";
 import equipmentInstall from "@/assets/equipment-installation.webp";
@@ -172,6 +173,19 @@ function Services() {
       img: newPoolStartup,
     },
   ];
+  const [lightbox, setLightbox] = useState<{ img: string; title: string } | null>(null);
+
+  useEffect(() => {
+    if (!lightbox) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setLightbox(null);
+    window.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [lightbox]);
+
   return (
     <section id="services" className="py-24">
       <div className="mx-auto max-w-6xl px-6">
@@ -187,9 +201,12 @@ function Services() {
               key={s.title}
               className="group rounded-2xl bg-card overflow-hidden border border-border shadow-sm hover:shadow-[var(--shadow-soft)] transition"
             >
-              <div
-                className="h-52 bg-cover bg-center transition-transform group-hover:scale-105"
+              <button
+                type="button"
+                onClick={() => setLightbox({ img: s.img, title: s.title })}
+                className="block w-full h-52 bg-cover bg-center transition-transform group-hover:scale-105 cursor-zoom-in"
                 style={{ backgroundImage: `url(${s.img})` }}
+                aria-label={`View ${s.title} image`}
               />
               <div className="p-6">
                 <s.icon className="w-7 h-7 text-brand" />
@@ -200,6 +217,32 @@ function Services() {
           ))}
         </div>
       </div>
+
+      {lightbox && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+          onClick={() => setLightbox(null)}
+        >
+          <button
+            type="button"
+            onClick={() => setLightbox(null)}
+            className="absolute top-4 right-4 rounded-full bg-white/10 hover:bg-white/20 text-white p-2 transition"
+            aria-label="Close"
+          >
+            <X className="w-6 h-6" />
+          </button>
+          <figure className="max-w-5xl max-h-full" onClick={(e) => e.stopPropagation()}>
+            <img
+              src={lightbox.img}
+              alt={lightbox.title}
+              className="max-h-[85vh] w-auto rounded-xl shadow-2xl"
+            />
+            <figcaption className="mt-3 text-center text-white/90 font-medium">
+              {lightbox.title}
+            </figcaption>
+          </figure>
+        </div>
+      )}
     </section>
   );
 }
