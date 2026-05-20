@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Phone, Mail, Droplets, Wrench, Hammer, CheckCircle2, Sparkles, ShieldCheck } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Phone, Mail, Droplets, Wrench, Hammer, CheckCircle2, Sparkles, ShieldCheck, X } from "lucide-react";
 import poolServiced from "@/assets/pool-serviced.webp";
 import acidWash from "@/assets/acid-wash.webp";
 import equipmentInstall from "@/assets/equipment-installation.webp";
