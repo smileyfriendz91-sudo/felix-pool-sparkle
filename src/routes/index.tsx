@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
-import { Phone, Mail, Droplets, Wrench, Hammer, CheckCircle2, Sparkles, ShieldCheck, X } from "lucide-react";
+import { Phone, Mail, Droplets, Wrench, Hammer, CheckCircle2, Sparkles, ShieldCheck, X, MapPin } from "lucide-react";
 import poolServiced from "@/assets/pool-serviced.webp";
 import acidWash from "@/assets/acid-wash.webp";
 import equipmentInstall from "@/assets/equipment-installation.webp";
@@ -41,6 +41,7 @@ function Index() {
       <Services />
       <Showcase />
       <Why />
+      <ServiceAreas />
       <CTA />
       <Footer />
     </div>
@@ -306,6 +307,54 @@ function Why() {
             </div>
           </div>
         ))}
+      </div>
+    </section>
+  );
+}
+
+function ServiceAreas() {
+  const areas = [
+    "West Hollywood",
+    "Beverly Hills",
+    "Bel Air",
+    "Santa Monica",
+    "West LA",
+    "Marina del Rey",
+    "Venice",
+    "Culver City",
+  ];
+  return (
+    <section className="py-20 bg-muted/30">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="max-w-2xl">
+          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-1 text-xs uppercase tracking-wider text-muted-foreground">
+            <MapPin className="w-3.5 h-3.5 text-brand" /> Where we work
+          </span>
+          <h2 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight">
+            Areas we service
+          </h2>
+          <p className="mt-3 text-muted-foreground text-lg">
+            Proudly serving the Westside and anywhere within a 10-mile radius of Los Angeles.
+          </p>
+        </div>
+        <ul className="mt-10 grid gap-3 sm:grid-cols-2 md:grid-cols-4">
+          {areas.map((area) => (
+            <li
+              key={area}
+              className="flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-3 shadow-sm"
+            >
+              <MapPin className="w-5 h-5 text-brand shrink-0" />
+              <span className="font-medium">{area}</span>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-6 text-sm text-muted-foreground">
+          Not sure if you're in our area? Give us a call at{" "}
+          <a href={PHONE_HREF} className="text-brand font-medium hover:underline">
+            {PHONE}
+          </a>
+          .
+        </p>
       </div>
     </section>
   );
