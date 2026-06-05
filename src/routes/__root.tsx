@@ -72,14 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Felix Pool Service" },
+      { name: "description", content: "Pool Service, serving the west LA area for more than 10 years at your service for anything pool related" },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Felix Pool Service" },
+      { property: "og:description", content: "Pool Service, serving the west LA area for more than 10 years at your service for anything pool related" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Felix Pool Service" },
+      { name: "twitter:description", content: "Pool Service, serving the west LA area for more than 10 years at your service for anything pool related" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e62c609c-eb31-4499-9dc5-5d4fff2f0bc8/id-preview-c7317be0--fa282737-f907-4402-a1c3-3844ccac6076.lovable.app-1780197742931.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e62c609c-eb31-4499-9dc5-5d4fff2f0bc8/id-preview-c7317be0--fa282737-f907-4402-a1c3-3844ccac6076.lovable.app-1780197742931.png" },
     ],
     links: [
       {
